@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '^_$sypd3lcotjci0=z*lz1%_#6%)tj
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['https://floating-beach-39351.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['floating-beach-39351.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
