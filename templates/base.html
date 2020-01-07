@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    {% block head %}
+    {% block title %} {% endblock title %}
+
+    {% endblock head %}
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+{% include 'include/script_vk.html' %}
+</head>
+<body>
+{%  include 'include/header.html'   %}
+    {% block content %}
+
+    {% endblock content %}
+{% include 'include/footer.html' %}
+{% include 'include/vk.html' %}
+<script src="{% static 'reviews/reviews_index.js' %}"></script>
+</body>
+</html>

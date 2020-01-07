@@ -1,0 +1,99 @@
+{% extends 'price/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Виды фотосессий | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'albums/albums_css/fotoset_list.css' %}">
+
+
+
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+        {% include 'include/text_section.html' %}
+        <section class="price">
+            <div class="container">
+                <h1>Популярные фотосессии</h1>
+                <div class="ars-list-price">
+
+                    {% for fotoset in fotoset_list %}
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset.url }}"
+                                 alt="{{ fotoset.name }}"/>
+                            <p class="price-title">{{ fotoset.name }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'svadebnaya' %}"> Посмотреть </a></div>
+                        </div>
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset1.url }}"
+                                 alt="{{ fotoset.name1 }}"/>
+                            <p class="price-title">{{ fotoset.name1 }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'love_story' %}"> Посмотреть </a>
+                            </div>
+                        </div>
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset2.url }}"
+                                 alt="{{ fotoset.name2 }}"/>
+                            <p class="price-title">{{ fotoset.name2 }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'semeynaya' %}"> Посмотреть </a></div>
+                        </div>
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset3.url }}"
+                                 alt="{{ fotoset.name3 }}"/>
+                            <p class="price-title">{{ fotoset.name3 }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'detskaya' %}"> Посмотреть </a></div>
+                        </div>
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset4.url }}"
+                                 alt="{{ fotoset.name4 }}"/>
+                            <p class="price-title">{{ fotoset.name4 }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'individualnaya' %}"> Посмотреть </a>
+                            </div>
+                        </div>
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset5.url }}"
+                                 alt="{{ fotoset.name5 }}"/>
+                            <p class="price-title">{{ fotoset.name5 }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'birthday' %}"> Посмотреть </a></div>
+                        </div>
+                        <div class="main-price">
+                            <img src="{{ fotoset.poster_fotoset6.url }}"
+                                 alt="{{ fotoset.name6 }}"/>
+                            <p class="price-title">{{ fotoset.name6 }}</p>
+                            <div class="overlay"></div>
+                            <div class="button-price"><a href="{% url 'novogodnyaya' %}"> Посмотреть </a></div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+        <section class="a-href">
+            <div class="container">
+                <hr class="hr-a-href"/>
+                <ul>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'places' %}">Места для съёмок</a></li>
+                    <li><a href="{% url 'about' %}">Обо мне</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+{% endblock content %}
+
+

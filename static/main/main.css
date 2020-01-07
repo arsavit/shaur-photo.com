@@ -1,0 +1,898 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1250px;
+    width: 100%;
+}
+
+.dws-menu [type='checkbox'],
+.dws-menu label.toggleSubmenu,
+i.fa-sort-down,
+i.fa-sort-up,
+.logo-white,
+i.fa-times {
+    display: none;
+}
+
+.nav-menu {
+    background: rgba(0, 0, 0, 0.1);
+    transition: all 0.3s linear;
+}
+
+.nav-menu {
+    position: fixed;
+    /*left: calc(50% - 548px);*/
+    display: block;
+    margin: 0 auto;
+    z-index: 100;
+    width: 100%;
+}
+
+.fotorama {
+    z-index: 0;
+    min-width: 100%;
+}
+
+.nav-menu:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transition: all 0.5s linear;
+}
+
+.nav-menu:hover.nav-menu .logo-white {
+    display: inline-block;
+}
+
+.nav-menu:hover.nav-menu .logo-black {
+    display: none;
+}
+
+.nav-menu:hover.nav-menu a {
+    color: #FFFFFF;
+}
+
+.dws-menu label.toggleMenu {
+    display: none;
+    padding: 15px;
+    cursor: pointer;
+    position: relative;
+    /*background: #9a9b9a;*/
+    transition: all 0.3s linear;
+}
+
+.dws-menu ul,
+.dws-menu ol {
+    list-style: none;
+}
+
+.dws-menu > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.dws-menu ul li.logo {
+    margin-right: 300px;
+}
+
+.dws-menu ul li.logo a:hover {
+    border: none;
+
+    background: none;
+
+    box-shadow: none;
+    transition: all 0.3s;
+}
+
+.dws-menu > ul li a {
+    display: block;
+    padding: 15px;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.dws-menu > ul li {
+    position: relative;
+}
+
+.dws-menu li a:hover {
+    border: none;
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #FFFFFF;
+    /*box-shadow: 1px 5px 10px -5px black;*/
+    transition: all 0.3s;
+}
+
+/* Submenu */
+
+.dws-menu li ul {
+    position: absolute;
+    min-width: 270px;
+    display: none;
+    transition: all 0.3s linear;
+}
+
+.dws-menu li > ul li a {
+    padding: 10px;
+    text-transform: none;
+}
+
+.dws-menu li:hover > ul {
+    display: block;
+    background: rgba(0, 0, 0, 0.6);
+    transition: all 0.3s linear;
+}
+
+/******************************************************   SECTION CARDS *********************************/
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-front img {
+    width: 300px;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.name-for-section-cards {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 50px;
+}
+
+.cards {
+    background: url("../images/background-for-cards.jpg");
+}
+
+.ars-cards {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.ars-cards-div {
+    margin: 60px auto;
+    padding: 10px;
+}
+
+.ars-cards .ars-cards-name {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+/**********************************************************************Section random slider**********************************************/
+.random-slider {
+    background: url("../images/background-for-random-slider.jpg");
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+}
+div.ars-random-social{
+    display: flex;
+    justify-content: space-between;
+}
+div.ars-fotorama-head{
+    width: 70%;
+    text-align: center;
+}
+/*.fororama-2-head {*/
+/*    width: 70%;*/
+
+/*}*/
+
+.ars-f-head h2 {
+    color: #ffffff;
+    /*padding-bottom: 25px;*/
+    /*margin-left: 27%;*/
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+div.social-and-album-list{
+    margin-top: 62px;
+}
+div.ars-card{
+    margin-bottom: 40px;
+}
+
+.fotorama {
+    /*box-shadow: 3px 1px 15px #000000;*/
+}
+
+/*.ars-random-social {*/
+/*    !*position: relative;*!*/
+/*    padding-top: 100px;*/
+/*    padding-bottom: 100px;*/
+/*    position: relative;*/
+/*}*/
+
+.ars-card {
+    /* Add shadows to create the "card" effect */
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+    transition: all 0.3s linear;
+}
+
+/* On mouse-over, add a deeper shadow */
+.ars-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s linear;
+}
+
+/* Add some padding inside the card container */
+.ars-container {
+    /*margin-top: 100px;*/
+    /*position: absolute;*/
+    /*right: 15px;*/
+    /*top: 60px;*/
+    /*border: 1px solid rgba(0,0,0);*/
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s linear;
+
+}
+
+.ars-container:hover {
+    box-shadow: 1px 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s linear;
+}
+
+.ars-container h4 {
+    display: block;
+    color: #ffffff;
+    padding: 10px 40px;
+    font-size: 18px;
+}
+
+.ars-social-name {
+    display: block;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.ars-container ul li {
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    transition: all 0.3s linear;
+}
+
+.ars-container ul li:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transition: all 0.3s linear;
+}
+
+.ars-container ul li:nth-child(3) {
+    padding-bottom: 15px;
+}
+
+.ars-container ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+
+}
+.fa-sort-down{
+    display: none;
+}
+.fa-sort-up{
+    display: none;
+}
+
+
+/***********************************************Album list********************************/
+.ars-album-list1 {
+    font-size: 15px;
+    line-height: 1.4;
+    /*width: 281px;*/
+    /*position: absolute;*/
+    /*right: 15px;*/
+    /*top: 400px;*/
+    transition: all 0.3s linear;
+}
+
+.ars-album-list1:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s linear;
+}
+
+.ars-album-list1 a {
+    text-decoration: none;
+}
+
+.ars-album-list1 h4 {
+    padding: 10px 40px;
+    font-size: 18px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.ars-panel-heading {
+
+    transition: all 0.3s linear;
+}
+
+.ars-panel-heading a {
+    background: rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 17px;
+    transition: all 0.3s linear;
+
+}
+
+.ars-panel-heading a:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s linear;
+}
+
+.ars-panel-heading a::after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: 15px;
+    transition: 0.3s;
+}
+
+.ars-panel-heading.in a::after {
+    transform: rotate(180deg);
+}
+
+.ars-panel-heading.in a {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.ars-panel-collapse {
+    display: none;
+}
+
+.ars-panel-ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.ars-panel-ul ul {
+    list-style: none;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.ars-panel-ul li {
+    transition: all 0.3s linear;
+    padding: 10px 35px;
+}
+
+.ars-panel-ul li a {
+    color: #ffffff;
+    display: block;
+}
+
+.ars-panel-ul li:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s linear;
+}
+
+/****************************************************   FOOTER    ***************************************************/
+footer {
+    background: rgba(0, 0, 0, 1);
+}
+
+.footer-up {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.contacts a {
+    color: #FFFFFF;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 100;
+    transition: all 0.3s linear;
+}
+.contacts a:hover{
+    font-size: 20px;
+    transition: all 0.3s linear;
+}
+
+.fa-phone-alt {
+    margin-right: 15px;
+}
+
+.footer-down {
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.footer-down ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-down ul li a {
+    color: #ffffff;
+    font-size: 30px;
+    margin-right: 25px;
+    margin-left: 25px;
+    transition: all 0.3s linear;
+}
+.footer-down ul li a:hover{
+    font-size: 35px;
+    transition: all 0.3s linear;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #000;
+    background-image: -webkit-linear-gradient(left, #fff, #000, #fff);
+    background-image: -moz-linear-gradient(left, #fff, #000, #fff);
+    background-image: -ms-linear-gradient(left, #fff, #000, #fff);
+    background-image: -o-linear-gradient(left, #fff, #000, #fff);
+}
+
+/* media*/
+
+@media all and (max-width: 1300px) {
+    .container {
+        max-width: 1140px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+}
+
+@media all and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .dws-menu ul li.logo {
+        margin-right: 150px;
+    }
+
+    /*.nav-menu {*/
+    /*    left: calc(50% - 480px);*/
+    /*}*/
+    /******************************************************** Section random slider*************************************************/
+    /*.random-slider {*/
+
+    /*    min-height: 950px;*/
+
+    /*}*/
+
+    /*.ars-f-head h2 {*/
+    /*    margin-left: 20%;*/
+
+    /*}*/
+
+    .ars-container {
+        width: 250px;
+    }
+
+    .ars-social-name h4 {
+        font-size: 15px;
+    }
+
+    .ars-album-list1 {
+        width: 250px;
+    }
+
+    .ars-album-list1 h4 {
+        font-size: 15px;
+    }
+
+    .ars-album-list1 a {
+        font-size: 15px;
+    }
+}
+
+@media all and (max-width: 992px) {
+    .container {
+        max-width: 720px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /*.nav-menu {*/
+    /*    left: calc(50% - 360px);*/
+    /*}*/
+    .dws-menu ul li.logo {
+        margin-right: 0px;
+    }
+
+    .dws-menu ul li a {
+        font-size: 14px;
+    }
+
+    .logo-black {
+        width: 175px;
+    }
+
+    .logo-white {
+        width: 175px;
+    }
+
+    /******************************************************** Section random slider*************************************************/
+    /*.random-slider {*/
+    /*    min-height: 1250px;*/
+    /*    position: relative;*/
+    /*}*/
+    div.ars-random-social{
+        flex-direction: column;
+    }
+    div.ars-fotorama-head{
+        width: 100%;
+    }
+    div.social-and-album-list{
+        width: 100%;
+    }
+    .ars-card{
+        width: 100%;
+    }
+    .ars-container{
+        width: 100%;
+    }
+
+    .ars-album-list1{
+        width: 100%;
+    }
+
+
+
+}
+
+@media all and (max-width: 768px) {
+     i.fa-sort-down{
+        display: inline-block;
+    }
+
+    .container {
+        max-width: 540px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    /*.nav-menu {*/
+    /*    left: calc(50% - 360px);*/
+    /*}*/
+    .nav-menu .logo-black {
+        display: none;
+        transition: all 0.3s linear;
+    }
+
+    .dws-menu ul li a {
+        color: #FFFFFF;
+        font-size: 15px;
+    }
+
+    .nav-menu .logo-white {
+        display: inline-block;
+    }
+
+    .nav-menu:hover.nav-menu .logo-white {
+        display: inline-block;
+    }
+
+    .nav-menu:hover.nav-menu .logo-black {
+        display: none;
+    }
+
+    .nav-menu {
+        background: rgba(0,0,0,0.9);
+        color: #FFFFFF;
+        transition: all 0.3s linear;
+    }
+
+    .nav-menu:hover {
+        background: rgba(0,0,0,0.9);
+        transition: all 0.3s linear;
+    }
+
+
+    label.toggleMenu {
+        /*text-align: center;*/
+        transition: all 0.3s linear;
+    }
+
+    label.toggleMenu span {
+        position: absolute;
+        right: 15px;
+        top: 25px;
+    }
+
+    .fa-sort-down {
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+
+    }
+
+    .dws-menu li:hover > ul {
+        display: none;
+        /*background: rgba(0, 0, 0, 0.8);*/
+    }
+
+    .dws-menu {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .dws-menu ul {
+        display: none;
+        /*background: rgba(0, 0, 0, 0.5);*/
+    }
+
+    .dws-menu label.toggleMenu {
+        display: block;
+        /*background: rgba(0, 0, 0, 0.5);*/
+        color: #FFFFFF;
+        transition: all 0.3s linear;
+    }
+
+    /*input.toggleMenu:checked + label.toggleMenu*/
+    input.toggleMenu:checked ~ label.toggleMenu span.toggle {
+        display: none;
+        transition: all 0.3s linear;
+    }
+
+    input.toggleMenu:checked ~ label.toggleMenu img.logo-white-min {
+        display: none;
+        transition: all 0.3s linear;
+    }
+
+    input.toggleMenu:checked ~ label.toggleMenu i.fa-times {
+        display: block;
+        transition: all 0.3s linear;
+    }
+
+    label.toggleMenu i.fa-times {
+        text-align: center;
+        font-size: 18px;
+        transition: all 0.3s linear;
+    }
+
+    input.toggleMenu:checked ~ ul,
+    input.toggleSubmenu:checked ~ ul {
+        display: block;
+        position: relative;
+        transition: all 0.3s linear;
+
+    }
+
+    .dws-menu label.toggleSubmenu {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        cursor: pointer;
+        display: block;
+        transition: all 0.3s linear;
+    }
+
+
+    input.toggleSubmenu:checked ~ a {
+        background: rgba(0, 0, 0, 0.71);
+        color: #FFFFFF;
+        transition: all 0.3s linear;
+    }
+
+    input.toggleSubmenu:checked ~ a i.fa-sort-down {
+        display: none;
+        transition: all 0.3s linear;
+
+    }
+
+    input.toggleSubmenu:checked ~ a i.fa-sort-up {
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        font-size: 20px;
+        transition: all 0.3s linear;
+    }
+
+    .dws-menu ul li a {
+        text-align: center;
+        color: #FFFFFF;
+        transition: all 0.3s linear;
+    }
+
+
+    .dws-menu ul li.logo {
+        margin-right: 0;
+    }
+
+    .dws-menu ul.subMenu {
+        background: rgba(0, 0, 0, 0.71);
+        color: #ffffff;
+        transition: all 0.3s linear;
+    }
+
+    .dws-menu ul.subMenu:hover {
+        background: rgba(0, 0, 0, 0.71);
+        color: #ffffff;
+        transition: all 0.3s linear;
+    }
+
+    #album-click:hover {
+        /*background: rgba(0, 0, 0, 0.8);*/
+        transition: all 0.3s linear;
+    }
+
+    /******************************************************** Section random slider*************************************************/
+    div.ars-random-social{
+        flex-direction: column;
+        align-items: center;
+    }
+    div.ars-fotorama-head{
+        width: 95%;
+    }
+    div.social-and-album-list{
+        width: 95%;
+    }
+    .ars-card{
+        width: 95%;
+    }
+    .ars-container{
+        width: 100%;
+    }
+
+    .ars-album-list1{
+        width: 95%;
+    }
+
+    /****************************************************   FOOTER   ****************************************/
+    .footer-up{
+        flex-direction: column;
+    }
+    .footer-logo{
+        margin-bottom: 20px;
+    }
+    .footer-down ul{
+        padding-bottom: 50px;
+    }
+}
+
+@media all and (max-width: 450px) {
+
+}
+
+@media all and (max-width: 400px) {
+
+
+}
+
+@media all and (max-width: 370px) {
+
+    /*************************************************  FOOTER     *******************************************/
+
+    .footer-logo a img {
+        width: 250px;
+        margin: 0 auto;
+    }
+    .contacts a{
+        font-size: 16px;
+    }
+
+
+}
+
+@media all and (max-width: 340px) {
+    /***********************************************section cards***********************************/
+    .flip-card {
+
+        width: 250px;
+        height: 166px;
+    }
+
+    .flip-card-front img {
+        width: 250px;
+    }
+
+    /******************************************************** Section random slider*************************************************/
+
+
+}
+
+@media all and (max-width: 320px) {
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

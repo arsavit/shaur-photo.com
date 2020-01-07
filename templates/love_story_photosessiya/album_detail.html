@@ -1,0 +1,180 @@
+{% extends 'places/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>{{ album_love.title }} | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'albums/albums_css/foto_detail.css' %}">
+    <script src="{% static 'places/places_js/jquery-3.4.1.min.js' %}"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+        {% include 'include/text_section.html' %}
+        <section class="main-album">
+            <div class="container">
+                <div class="main-album-name">
+                    <h1>{{ album_love.title }}</h1>
+                </div>
+                <div class="fotorama"
+                     data-allowfullscreen="native"
+                     data-nav="thumbs">
+                    {% for foto in album_love.foto_love_set.all %}
+                        <img src="{{ foto.image.url }}" alt="{{ album_love.title }}">
+                    {% endfor %}
+                </div>
+            </div>
+
+        </section>
+        <section class="album-list">
+            <div class="container">
+                <div class="ars-album-list1">
+                    <h2>Все альбомы</h2>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">Свадебная фотосъёмка</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album in album_list %}
+                                            <li><a href="{{ album.get_absolute_url }}">{{ album.title }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">Семейная фотосъёмка</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album_sem in album_sem_list %}
+                                            <li><a href="{{ album_sem.get_absolute_url }}">{{ album_sem.title }}</a>
+                                            </li>
+                                        {% endfor %}
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">Индивидуальная фотосъёмка</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album_ind in album_ind_list %}
+                                            <li><a href="{{ album_ind.get_absolute_url }}">{{ album_ind.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">Детская фотосъёмка</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album_det in album_det_list %}
+                                            <li><a href="{{ album_det.get_absolute_url }}">{{ album_det.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">День рождения</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album_birt in album_birt_list %}
+                                            <li><a href="{{ album_birt.get_absolute_url }}">{{ album_birt.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">Новогодняя фотосъёмка</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album_nov in album_nov_list %}
+                                            <li><a href="{{ album_nov.get_absolute_url }}">{{ album_nov.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ars-panel">
+                        <div class="ars-panel-heading">
+                            <a href="#">Love Story</a>
+                        </div>
+                        <div class="ars-panel-collapse">
+                            <div class="ars-panel-body">
+                                <div class="ars-panel-ul">
+                                    <ul>
+                                        {% for album_love in album_love_list %}
+                                            <li><a href="{{ album_love.get_absolute_url }}">{{ album_love.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <section class="a-href">
+            <div class="container">
+                <hr class="hr-a-href"/>
+                <ul>
+                    <li><a href="{% url 'price' %}">Прайс</a></li>
+                    <li><a target="_blank" href="https://vk.com/club134565385">Заказать фотосессию</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+
+

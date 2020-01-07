@@ -1,0 +1,54 @@
+{% extends 'price/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Прайс | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'price/price_css/price_list.css' %}">
+
+
+
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+        {% include 'include/text_section.html' %}
+
+        <section class="price">
+            <div class="container">
+                <h1>Прайс</h1>
+
+                <div class="ars-list-price">
+                    {% for price in price_list %}
+                    <div class="main-price">
+                        <img src="{{ price.poster_price.url }}"
+                             alt="{{ price.name }}"/>
+                        <p class="price-title">{{ price.name }}</p>
+                        <div class="overlay"></div>
+                        <div class="button-price"><a href="{{price.get_absolute_url}}"> Узнать стоимость </a></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="a-href">
+        <div class="container">
+            <hr class="hr-a-href"/>
+            <ul>
+                <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                <li><a href="{% url 'photosessions' %}">Примеры работ</a></li>
+                <li><a href="{% url 'about' %}">Обо мне</a></li>
+            </ul>
+        </div>
+
+
+    </section>
+
+    </main>
+
+
+{% endblock content %}

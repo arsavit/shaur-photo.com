@@ -1,0 +1,61 @@
+{% extends 'places/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Детская фотосъёмка | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'albums/albums_css/fotoset_detail.css' %}">
+
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+
+        {% include 'include/text_section.html' %}
+        <section class="ars-albums">
+            <div class="container">
+             <h1>Детская фотосъёмка</h1>
+                <div class="ars-albums-div">
+                    <div class="box">
+                        {% for album in album_det_list %}
+                        <a href="{{ album.get_absolute_url }}">
+
+                            <div class="card">
+                                <div class="imgBx">
+                                    <img src="{{album.album_poster.url}}" alt="{{ album.title }}">
+                                </div>
+                                <div class="details">
+                                    <h2>{{ album.title }}</h2>
+                                </div>
+                            </div>
+                        </a>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+        <section class="a-href">
+            <div class="container">
+                <hr class="hr-a-href"/>
+                <ul>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                    <li><a href="{% url 'price' %}">Прайс</a></li>
+                    <li><a href="{% url 'about' %}">Обо мне</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+{% endblock content %}

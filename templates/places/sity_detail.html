@@ -1,0 +1,72 @@
+{% extends 'places/base.html' %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>{{ sity.name }} | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'places/places_css/places_detail.css' %}">
+
+
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Poppins:400,700'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Montserrat:300,400,600'>
+{% endblock head %}
+
+{% block content %}
+    <main>
+        <section class="places">
+            <section class="velo-slides" data-velo-slider="on" data-velo-theme="light">
+
+                {% for poster in sity.places_set.all %}
+                    <!-- Slide -->
+                    <section class="velo-slide">
+                        <!-- Slide BG -->
+                        <div class="velo-slide__bg">
+                            <!-- Borders -->
+                            <span class="border"><span></span></span> <!-- Img -->
+                            <figure class="velo-slide__figure"
+                                    style="background-image: url({{ poster.poster.url }})"></figure>
+                        </div>
+
+                        <!-- Header -->
+                        <header class="velo-slide__header">
+                            <h3 class="velo-slide__title"><span
+                                    class="oh"><span>{{ poster.name }}</span></span>
+                            </h3>
+                            <p class="velo-slide__text"><span class="oh"><span>{{poster.description}}</span></span>
+                            </p>
+                            <span class="velo-slide__btn"><a target="_blank" class="btn-draw btn--white"
+                                                             href="{{ poster.maps }}"><span
+                                    class="btn-draw__text"><span>Показать на карте</span></span></a></span>
+                        </header>
+                    </section>
+                {% endfor %}
+
+                <!-- Slides Nav -->
+                <nav class="velo-slides-nav">
+                    <ul class="velo-slides-nav__list">
+                        <li>
+                            <a class="js-velo-slides-prev velo-slides-nav__prev inactive" href="#0"><i
+                                    class="icon-up-arrow"></i></a>
+                        </li>
+                        <li>
+                            <a class="js-velo-slides-next velo-slides-nav__next" href="#0"><i
+                                    class="icon-down-arrow"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </section>
+
+    </main>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.3.0/velocity.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.3.0/velocity.ui.js'></script>
+    <script src=" {% static 'places/places_js/places_detail.js' %}"></script>
+{% endblock content %}

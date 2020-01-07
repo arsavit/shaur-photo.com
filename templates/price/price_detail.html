@@ -1,0 +1,83 @@
+{% extends 'places/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Прайс | {{ price.name }} | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'price/price_css/price_detail.css' %}">
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+
+        {% include 'include/text_section.html' %}
+        <section class="price-item">
+            <div class="container">
+                <div class="price-item-main">
+                    <div class="title-price">
+                        <h1> {{ price.name }}</h1>
+                    </div>
+                    <div class="tarifs-and-foto">
+                        {% for desc in price.price_description_set.all %}
+                            <div class="description-price">
+                                <p>{{ desc.description }}</p>
+                            </div>
+                        {% endfor %}
+                        <div class="tarifs">
+
+                            <div class="tarifs-ars">
+                                <div class="imaga1"><img src="{{ price.poster_price.url }}" alt="{{ price.name }}">
+                                </div>
+                                {#                            <h3>Тарифы:</h3>#}
+                                <div class="tarif">
+                                    {% for tarif in price.tariffs_set.all %}
+                                        <h5>{{ tarif.title }}</h5>
+                                        <p class="description-tarif">{{ tarif.tariffs_description }}</p>
+                                        <div class="price-sum">
+                                            {{ tarif.tariffs_price }}
+                                        </div>
+                                    {% endfor %}
+
+
+                                </div>
+
+                            </div>
+                            <div class="imaga-and-other">
+                                <div class="imaga"><img src="{{ price.poster_price.url }}" alt="{{ price.name }}">
+                                </div>
+                                <div class="other-ars">
+                                    <ul><h4>Узнать другие цены</h4>
+                                        {% for price in price_list %}
+                                            <li><a href="{{ price.get_absolute_url }}">{{ price.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="a-href">
+            <div class="container">
+                <hr class="hr-a-href"/>
+                <ul>
+                    <li><a href="{% url 'photosessions' %}">Примеры работ</a></li>
+                    <li><a target="_blank" href="https://www.instagram.com/sviatlana_haurylavets">Я в Instagram</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+
+    </main>
+
+{% endblock content %}
+
+

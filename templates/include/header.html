@@ -1,0 +1,38 @@
+{% load static %}
+<header>
+
+
+    <div class="nav-menu">
+        <nav class="dws-menu container">
+            <input type="checkbox" name="toggle" id="menu" class="toggleMenu">
+            <label for="menu" class="toggleMenu"><img class="logo-white-min" src="{% static 'images/logo4.svg' %}" width="150px"
+                                                      alt="логотип"><span class="toggle">☰</span> <i
+                    class="fas fa-times"></i></label>
+            <ul>
+                <li class="logo"><a href="{% url 'main' %}">
+                    <img class="logo-black" src="{% static 'images/logo4_black.svg' %}" width="200px" alt="логотип">
+                    <img class="logo-white" src="{% static 'images/logo4.svg' %}" width="200px" alt="логотип белый">
+                </a>
+                </li>
+                <li>
+                    <input type="checkbox" name="toggle" id="sub_m1" class="toggleSubmenu">
+                    <a id="album-click" href="#">Альбомы <i class="fas fa-sort-down"></i> <i class="fas fa-sort-up"></i></a>
+                    <label for="sub_m1" class="toggleSubmenu"><span class="fas"></span> </label>
+                    <ul class="subMenu">
+                        <li><a href="{% url 'svadebnaya' %}">Свадебная фотосъёмка</a></li>
+                        <li><a href="{% url 'individualnaya' %}">Индивидуальная фотосъёмка</a></li>
+                        <li><a href="{% url 'semeynaya' %}">Семейная фотосъёмка</a></li>
+                        <li><a href="{% url 'detskaya' %}">Детская фотосъёмка</a></li>
+                        <li><a href="{% url 'novogodnyaya' %}">Новогодняя фотосъёмка</a></li>
+                        <li><a href="{% url 'birthday' %}">День рождения</a></li>
+                        <li><a href="{% url 'love_story' %}">Love Story</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'about' %}">Обо мне</a></li>
+                <li><a href="{% url 'price' %}">Прайс</a></li>
+                <li><a href="{% url 'places' %}">Места для съёмок</a></li>
+                <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

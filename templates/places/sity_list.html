@@ -1,0 +1,61 @@
+{% extends 'places/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Места для фотосъёмок | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'places/places_css/places.css' %}">
+
+
+
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+        {% include 'include/text_section.html' %}
+
+        <section class="places">
+            <div class="container">
+                <div class="places-div">
+                    <div class="head-places">
+                        <h1>Пожалуйста, выберите город</h1>
+                    </div>
+                    <div class="city-list">
+                        <div class="ars-list-price">
+                            {% for sity in sity_list %}
+                                <div class="main-price">
+                                    <img src="{{ sity.poster_place.url }}" alt="{{ sity.name }}"/>
+                                    <p class="price-title">{{ sity.name }}</p>
+                                    <div class="overlay"></div>
+                                    <div class="button-price"><a href="{{ sity.get_absolute_url }}"> Подробнее </a>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="a-href">
+            <div class="container">
+                <hr class="hr-a-href"/>
+                <ul>
+                    <li><a href="{% url 'photosessions' %}">Примеры работ</a></li>
+                    <li><a href="{% url 'price' %}">Прайс</a></li>
+                    <li><a href="{% url 'reviews' %}">Отзывы</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+
+{% endblock content %}

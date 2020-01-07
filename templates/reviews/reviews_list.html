@@ -1,0 +1,85 @@
+{% extends 'reviews/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Отзывы | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'reviews/reviews.css' %}">
+    {% include 'include/styles_for_text_section.html' %}
+{% endblock head %}
+{% block content %}
+    <main>
+        {% include 'include/text_section.html' %}
+        <section class="a-href">
+            <h1 class="rev-head">Отзывы</h1>
+            <div class="container">
+                <ul>
+                    <li><a target="_blank" href="https://vk.com/topic-134565385_35253217">Больше отзывов</a></li>
+                    <li><a target="_blank" href="https://vk.com/topic-134565385_35253217">Оставить отзыв</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+        <section class="reviews">
+            <div class="container">
+                {% for autor in autor_list %}
+                    <div class="main-rev">
+
+                        <div class="autor">
+                            <a target="_blank" href="{{ autor.social_url }}" class="autor-a">
+                                <div class="avatar">
+                                    <img src="{{ autor.avatar.url }}" alt="{{ autor.name }}">
+                                </div>
+                                <div class="autors-name">
+                                    <h3>{{ autor.name }}</h3>
+                                </div>
+                            </a>
+
+                        </div>
+
+                        <div class="body-rev">
+
+                            <div class="text-rev">
+                                {% for desc in autor.body_set.all %}
+                                    <p>{{ desc.description }}</p>
+                                {% endfor %}
+
+                            </div>
+                            <div class="foto-rev">
+{#                                <h3>Несколько фото для примера:</h3>#}
+{#                                <div class="foto-rev-foto">#}
+{#                                    {% for foto in autor.foto_set.all %}#}
+{#                                        <img src="{{ foto.image.url }}" class="image"#}
+{#                                             alt="{{ foto.description_foto_rev }}"/>#}
+{#                                    {% endfor %}#}
+{#                                </div>#}
+                                <div class="proof"><a target="_blank" href="{{ autor.proof_url }}">Доказательство подлинности</a></div>
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="a-href">
+            <div class="container">
+                <hr class="hr-a-href"/>
+                <ul>
+                    <li><a href="{% url 'photosessions' %}">Примеры работ</a></li>
+                    <li><a href="{% url 'price' %}">Прайс</a></li>
+                    <li><a href="{% url 'about' %}">Обо мне</a></li>
+                </ul>
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+{% endblock content %}
+

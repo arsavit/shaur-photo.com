@@ -1,0 +1,338 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}<title>Фотограф Светлана Гавриловец | Добро пожаловать!</title>  {% endblock title %}
+    <script src="{% static 'places/places_js/jquery-3.4.1.min.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'main/main.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+{% endblock head %}
+{% block content %}
+
+
+    <main>
+        <section class="fotorama_ars">
+            <div class="fotorama"
+                 data-autoplay="5000"
+                 data-loop="true">
+                {% for image in slider_head_list %}
+                    <img src="{{ image.image.url }}" alt="{{ image.description }}">
+                {% endfor %}
+
+            </div>
+        </section>
+        <section class="cards" style="background-image: url({% static 'images/background-for-cards.jpg' %})">
+            <div>
+                {% for headers in headers %}
+                    <h2 class="name-for-section-cards">{{ headers.head1 }}</h2>
+                {% endfor %}
+            </div>
+            <div class="container ars-cards">
+                {% for fotoset in fotoset_list %}
+                    <div class="ars-cards-div card1">
+                        <a href="{% url 'svadebnaya' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset.url }}" alt="{{ fotoset.name }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name }}</h4>
+                                        <p>{{ fotoset.description }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ars-cards-div card2">
+                        <a href="{% url 'love_story' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset1.url }}" alt="{{ fotoset.name1 }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name1 }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name1 }}</h4>
+                                        <p>{{ fotoset.description1 }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ars-cards-div card3">
+                        <a href="{% url 'semeynaya' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset2.url }}" alt="{{ fotoset.name2 }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name2 }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name2 }}</h4>
+                                        <p>{{ fotoset.description2 }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ars-cards-div card4">
+                        <a href="{% url 'detskaya' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset3.url }}" alt="{{ fotoset.name3 }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name3 }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name3 }}</h4>
+                                        <p>{{ fotoset.description3 }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ars-cards-div card5">
+                        <a href="{% url 'individualnaya' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset4.url }}" alt="{{ fotoset.name4 }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name4 }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name4 }}</h4>
+                                        <p>{{ fotoset.description4 }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ars-cards-div card6">
+                        <a href="{% url 'birthday' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset5.url }}" alt="{{ fotoset.name5 }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name5 }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name5 }}</h4>
+                                        <p>{{ fotoset.description5 }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ars-cards-div card7">
+                        <a href="{% url 'novogodnyaya' %}">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="{{ fotoset.poster_fotoset6.url }}" alt="{{ fotoset.name6 }}">
+                                        <h4 class="ars-cards-name">{{ fotoset.name6 }}</h4>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h4 class="ars-cards-name">{{ fotoset.name6 }}</h4>
+                                        <p>{{ fotoset.description6 }}</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section class="random-slider" style="background-image: url({% static 'images/background-for-random-slider.jpg' %})">
+            <div class="container">
+                <div class="ars-random-social">
+
+                    <div class="ars-fotorama-head">
+                        <div class="ars-f-head">
+                            {% for head in headers %}
+                                <h2>{{ head.head2 }}</h2>
+                            {% endfor %}
+                        </div>
+
+                        <div class="fotorama fororama-2-head"
+                             data-allowfullscreen="native"
+                             data-autoplay="4000">
+                            {% for image in slider_down_list %}
+                                <img src="{{ image.image_sd.url }}" alt="{{ image.description_sd }}">
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="social-and-album-list">
+                        <div class="ars-card">
+                            <div class="ars-container">
+                                <div class="ars-social-name">
+                                    <h4><b>Я в социальных сетях</b></h4>
+                                </div>
+
+                                <ul>
+                                    <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i>  Вконтакте</a>
+                                    </li>
+                                    <li><a target="_blank" href="https://vk.com/club134565385"><i class="fab fa-vk"></i>  Группа
+                                        Вконтакте</a></li>
+                                    <li><a target="_blank" href="https://www.instagram.com/sviatlana_haurylavets"><i
+                                            class="fab fa-instagram"></i>  Инстаграм</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="ars-album-list1">
+                            <h4>Все альбомы</h4>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">Свадебная фотосъёмка</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album in album_list %}
+                                                    <li><a href="{{ album.get_absolute_url }}">{{ album.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">Семейная фотосъёмка</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album_sem in album_sem_list %}
+                                                    <li>
+                                                        <a href="{{ album_sem.get_absolute_url }}">{{ album_sem.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">Индивидуальная фотосъёмка</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album_ind in album_ind_list %}
+                                                    <li>
+                                                        <a href="{{ album_ind.get_absolute_url }}">{{ album_ind.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">Детская фотосъёмка</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album_det in album_det_list %}
+                                                    <li>
+                                                        <a href="{{ album_det.get_absolute_url }}">{{ album_det.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">День рождения</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album_birt in album_birt_list %}
+                                                    <li>
+                                                        <a href="{{ album_birt.get_absolute_url }}">{{ album_birt.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">Новогодняя фотосъёмка</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album_nov in album_nov_list %}
+                                                    <li>
+                                                        <a href="{{ album_nov.get_absolute_url }}">{{ album_nov.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ars-panel">
+                                <div class="ars-panel-heading">
+                                    <a href="#">Love Story</a>
+                                </div>
+                                <div class="ars-panel-collapse">
+                                    <div class="ars-panel-body">
+                                        <div class="ars-panel-ul">
+                                            <ul>
+                                                {% for album_love in album_love_list %}
+                                                    <li>
+                                                        <a href="{{ album_love.get_absolute_url }}">{{ album_love.title }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+    </main>
+{% endblock content %}

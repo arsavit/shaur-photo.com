@@ -1,0 +1,1 @@
+default_app_config = "birthday_photosessiya.apps.BirthdayPhotosessiyaConfig"
