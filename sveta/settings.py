@@ -28,7 +28,7 @@ SECRET_KEY = 'ae@@j!lpj2+9wy$#4^#%4zx54@c1%f=54^1r_b)*y)%t5s2@@i'
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1']
+ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'sveta.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shaurphoto',
-        'USER': 'shaurphoto',
+        'NAME': 'shaur',
+        'USER': 'shauruser',
         'PASSWORD': 'shaurphoto',
-        'HOST': '213.226.127.81',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }
@@ -152,8 +152,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
 
