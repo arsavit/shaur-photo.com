@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% block title %}<title>Прайс | {{ price.name }} | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    {% block title %}<title>Прайс | {{ price.name }} | Фотограф Светлана Гавриловец | shaur-photo.com</title>
+    {% endblock title %}
+
+    <meta name="description"
+          content='Узнать стоимость услуги {{ price.name }} фотографа Светланы Гавриловец в 2020 году (Бобруйск, Мозырь, Лельчицы)'>
+    <meta name="keywords"
+          content="{{ price.name }} стоимость, {{ price.name }} цена, {{ price.name }} сколько стоит, {{ price.name }} бобруйск мозырь лельчицы">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'price/price_css/price_detail.css' %}">

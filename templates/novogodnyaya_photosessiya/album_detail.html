@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% block title %}<title>{{ album_nov.title }} | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    {% block title %}
+        <title>{{ album_nov.title }}| Новогодняя Фотосъемка | Фотограф Светлана Гавриловец | shaur-photo.com</title>
+    {% endblock title %}
+
+    <meta name="description"
+          content='Альбом {{ album_nov.title }} в разделе новогодняя фотосъемка, фотограф Светлана Гавриловец | Приятного просмотра!'>
+    <meta name="keywords"
+          content="фотограф новогодняя фотосъемка, новогодняя фотосъемка, новогодняя фотосъемка все альбомы, заказать новогоднюю фотосъемку">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'albums/albums_css/foto_detail.css' %}">

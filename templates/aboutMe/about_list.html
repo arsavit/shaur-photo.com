@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {% block title %}<title>Обо мне | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    {% block title %}<title>Обо Мне | Фотограф Светлана Гавриловец | shaur-photo.com</title>  {% endblock title %}
+
+    <meta name="description" content="Здесь вы можете узнать информацию о фотографе Светлане Гавриловец, узнать цены, посмотреть отзывы и задать вопросы">
+    <meta name="keywords" content="Светлана Гавриловец кто это, Светлана Гавриловец информация, фотограф отзывы, Светлана Гавриловец фотограф Лельчицы">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
@@ -15,7 +18,7 @@
 
 {% block content %}
     <main>
-       {% include 'include/text_section.html' %}
+        {% include 'include/text_section.html' %}
         {% for about in about_list %}
             <section class="about">
                 <div class="container">
@@ -47,9 +50,12 @@
                                          style="background-image: url({{ about.avatar.url }}); background-repeat: no-repeat"></div>
                                     <ul class="share_bar">
 
-                                        <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a></li>
-                                        <li><a target="_blank" href="https://vk.com/club134565385"><i class="fab fa-vk"></i></a></li>
-                                        <li><a target="_blank" href="https://www.instagram.com/sviatlana_haurylavets/"><i
+                                        <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a>
+                                        </li>
+                                        <li><a target="_blank" href="https://vk.com/club134565385"><i
+                                                class="fab fa-vk"></i></a></li>
+                                        <li><a target="_blank"
+                                               href="https://www.instagram.com/sviatlana_haurylavets/"><i
                                                 class="fab fa-instagram"></i></a></li>
 
                                     </ul>
@@ -61,9 +67,12 @@
                                     {% endfor %}
                                     <ul class="social">
 
-                                        <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a></li>
-                                        <li><a target="_blank" href="https://vk.com/club134565385"><i class="fab fa-vk"></i></a></li>
-                                        <li><a target="_blank" href="https://www.instagram.com/sviatlana_haurylavets/"><i
+                                        <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a>
+                                        </li>
+                                        <li><a target="_blank" href="https://vk.com/club134565385"><i
+                                                class="fab fa-vk"></i></a></li>
+                                        <li><a target="_blank"
+                                               href="https://www.instagram.com/sviatlana_haurylavets/"><i
                                                 class="fab fa-instagram"></i></a></li>
 
                                     </ul>

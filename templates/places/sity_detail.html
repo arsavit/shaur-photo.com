@@ -5,7 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% block title %}<title>{{ sity.name }} | Фотограф Светлана Гавриловец</title>  {% endblock title %}
+    {% block title %}<title>Подборка красивых мест в городе {{ sity.name }}| shaur-photo.com</title>
+    {% endblock title %}
+
+    <meta name="description"
+          content='Места для фото в городе {{ sity.name }} от фотографа Светланы Гавриловец'>
+    <meta name="keywords"
+          content="фотограф {{ sity.name }}, места для фото {{ sity.name }}, детская фотосъемка {{ sity.name }}, фотосъемка {{ sity.name }}, интересные места для фото {{ sity.name }}">
+
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'places/places_css/places_detail.css' %}">
@@ -37,7 +44,7 @@
                             <h3 class="velo-slide__title"><span
                                     class="oh"><span>{{ poster.name }}</span></span>
                             </h3>
-                            <p class="velo-slide__text"><span class="oh"><span>{{poster.description}}</span></span>
+                            <p class="velo-slide__text"><span class="oh"><span>{{ poster.description }}</span></span>
                             </p>
                             <span class="velo-slide__btn"><a target="_blank" class="btn-draw btn--white"
                                                              href="{{ poster.maps }}"><span
