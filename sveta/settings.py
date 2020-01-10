@@ -28,7 +28,7 @@ SECRET_KEY = 'ae@@j!lpj2+9wy$#4^#%4zx54@c1%f=54^1r_b)*y)%t5s2@@i'
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'shaur-photo.com', 'localhost']
 
 # Application definition
 
@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+#    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -136,8 +136,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 # STATIC_URL = '/static/'
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIR]
+#STATIC_DIR = os.path.join(BASE_DIR, 'static')
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -153,7 +153,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = '/home/arsavit/shaur-photo-dep/shaur-photo/static/'
