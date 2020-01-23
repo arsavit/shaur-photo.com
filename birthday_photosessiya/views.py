@@ -15,6 +15,8 @@ class Album_birtListView(ListView):
     model = Album_birt
     queryset = Album_birt.objects.all()
     template_name = 'birthday_photosessiya/album_list.html'
+    paginate_by = 9
+
 
 
 class Album_birtDetailView(DetailView):

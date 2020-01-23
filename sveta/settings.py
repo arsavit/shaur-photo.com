@@ -32,9 +32,13 @@ ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'shaur-photo.com', 'localhost']
 
 # Application definition
 
+SITE_ID = 1
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

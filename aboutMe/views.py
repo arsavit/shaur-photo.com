@@ -1,7 +1,7 @@
 
 from django.views.generic import ListView, DetailView
 
-from .models import About, Desc, Desc_second
+from .models import About, Desc
 # Create your views here.
 
 class AboutView(ListView):

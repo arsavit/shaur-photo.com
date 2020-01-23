@@ -14,6 +14,7 @@ class Album_loveListView(ListView):
     model = Album_love
     queryset = Album_love.objects.all()
     template_name = 'love_story_photosessiya/album_list.html'
+    paginate_by = 9
 
 
 class Album_loveDetailView(DetailView):

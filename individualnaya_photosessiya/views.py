@@ -15,6 +15,7 @@ class Album_indListView(ListView):
     model = Album_ind
     queryset = Album_ind.objects.all()
     template_name = 'individualnaya_photosessiya/album_list.html'
+    paginate_by = 9
 
 
 class Album_indDetailView(DetailView):

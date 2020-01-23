@@ -261,6 +261,44 @@ section.ars-albums{
 .card {
     margin-bottom: 50px;
 }
+
+.was-published-recently-list{
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    z-index: 20;
+    color: red;
+    font-size: 20px;
+}
+/************************************************ paginationE*********************************************************/
+.pagination{
+    margin: 0 auto;
+
+    padding: 10px 25px;
+}
+.step-links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination a{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 25px;
+    color: #000000;
+    border: 1px solid #000000;
+    transition: all 0.3s ease;
+    display: block;
+    width: 140px;
+    text-align: center;
+}
+.pagination a:hover{
+    color: #ffffff;
+    background: #000000;
+    transition: all 0.3s ease;
+}
+
+
 /****************************************************   A-href    ***************************************************/
 .a-href {
     margin-bottom: 50px;
@@ -373,7 +411,23 @@ hr {
     background-image: -ms-linear-gradient(left, #fff, #000, #fff);
     background-image: -o-linear-gradient(left, #fff, #000, #fff);
 }
+::-webkit-scrollbar
+{
+    background: rgba(0,0,0,0.2);
+    width: 10px;
 
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgba(0,0,0,0.6);
+
+}
 /* media*/
 
 @media all and (max-width: 1300px) {

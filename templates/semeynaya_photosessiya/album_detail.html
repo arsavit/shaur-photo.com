@@ -28,6 +28,9 @@
                     <h1>{{ album_sem.title }}</h1>
                 </div>
                 <div class="fotorama"
+                     data-width="900"
+                     data-height="600"
+                     data-ratio="300/200"  
                      data-allowfullscreen="native"
                      data-nav="thumbs">
                     {% for foto_sem in album_sem.foto_sem_set.all %}
@@ -50,7 +53,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album in album_list %}
-                                            <li><a href="{{ album.get_absolute_url }}">{{ album.title }}</a></li>
+                                            <li><a href="{{ album.get_absolute_url }}">{% if album.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album.title }}</span></a></li>
                                         {% endfor %}
                                     </ul>
                                 </div>
@@ -66,7 +72,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album_sem in album_sem_list %}
-                                            <li><a href="{{ album_sem.get_absolute_url }}">{{ album_sem.title }}</a>
+                                            <li><a href="{{ album_sem.get_absolute_url }}">{% if album_sem.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album_sem.title }}</span></a>
                                             </li>
                                         {% endfor %}
 
@@ -84,7 +93,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album_ind in album_ind_list %}
-                                            <li><a href="{{ album_ind.get_absolute_url }}">{{ album_ind.title }}</a>
+                                            <li><a href="{{ album_ind.get_absolute_url }}">{% if album_ind.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album_ind.title }}</span></a>
                                             </li>
                                         {% endfor %}
                                     </ul>
@@ -101,7 +113,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album_det in album_det_list %}
-                                            <li><a href="{{ album_det.get_absolute_url }}">{{ album_det.title }}</a>
+                                            <li><a href="{{ album_det.get_absolute_url }}">{% if album_det.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album_det.title }}</span></a>
                                             </li>
                                         {% endfor %}
                                     </ul>
@@ -118,7 +133,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album_birt in album_birt_list %}
-                                            <li><a href="{{ album_birt.get_absolute_url }}">{{ album_birt.title }}</a>
+                                            <li><a href="{{ album_birt.get_absolute_url }}">{% if album_birt.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album_birt.title }}</span></a>
                                             </li>
                                         {% endfor %}
                                     </ul>
@@ -135,7 +153,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album_nov in album_nov_list %}
-                                            <li><a href="{{ album_nov.get_absolute_url }}">{{ album_nov.title }}</a>
+                                            <li><a href="{{ album_nov.get_absolute_url }}">{% if album_nov.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album_nov.title }}</span></a>
                                             </li>
                                         {% endfor %}
                                     </ul>
@@ -152,7 +173,10 @@
                                 <div class="ars-panel-ul">
                                     <ul>
                                         {% for album_love in album_love_list %}
-                                            <li><a href="{{ album_love.get_absolute_url }}">{{ album_love.title }}</a>
+                                            <li><a href="{{ album_love.get_absolute_url }}">{% if album_love.was_published_recently %}
+                                                    <span class="was-published-recently">НОВЫЙ АЛЬБОМ!</span>
+                                                {% endif %}
+                                                <span>{{ album_love.title }}</span></a>
                                             </li>
                                         {% endfor %}
                                     </ul>

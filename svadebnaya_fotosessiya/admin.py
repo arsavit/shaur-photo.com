@@ -1,5 +1,5 @@
 from django.contrib import admin
-
+from django.utils.safestring import mark_safe
 from .models import Album, Foto
 
 # Register your models here.
@@ -12,10 +12,24 @@ class FotoInline(admin.StackedInline):
     model = Foto
     max_num = 500
     extra = 20
+    readonly_fields = ('get_image',)
+    def get_image(self, obj):
+        return mark_safe(f'<img src={obj.image.url} width="60" height="50"')
+
+    get_image.short_description = 'Изображение'
 
 
 class AlbumAdmin(admin.ModelAdmin):
     inlines = [FotoInline, ]
+    date_hierarchy = 'publish'
+    prepopulated_fields = {'url': ('title',)}
+    list_display = ("title", "get_image",)
+    readonly_fields = ('get_image',)
+
+    def get_image(self, obj):
+        return mark_safe(f'<img src={obj.album_poster.url} width="60" height="50"')
+
+    get_image.short_description = 'Изображение'
 
 
 # admin.site.register(Foto, FotoAdmin)

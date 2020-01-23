@@ -1,5 +1,6 @@
 from datetime import date
-
+from django.utils import timezone
+import datetime
 from django.db import models
 from django.urls import reverse
 
@@ -12,6 +13,8 @@ class Album_sem(models.Model):
     album_poster = models.ImageField('Обложка альбома', upload_to='svadebnaya_fotosessiya/')
     # date_album = models.DateField('Дата', default=date.today)
     url = models.SlugField('URL-привязка', max_length=50, unique=True)
+    updated = models.DateTimeField(auto_now=True)
+    publish = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
@@ -19,9 +22,13 @@ class Album_sem(models.Model):
     def get_absolute_url(self):
         return reverse('album_sem_detail', kwargs={"slug": self.url})
 
+    def was_published_recently(self):
+        return self.publish >= (timezone.now()-datetime.timedelta(days=7))
+
     class Meta:
         verbose_name = 'Альбом'
         verbose_name_plural = 'Альбомы'
+        ordering = ('-publish',)
 
 class Foto_sem(models.Model):
     image = models.ImageField('Фотография', upload_to='semeynaya_photosessiya/albums')

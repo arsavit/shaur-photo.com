@@ -33,6 +33,7 @@ class Fotoset(models.Model):
     name6 = models.CharField('Вид фотосъёмки', max_length=100, default='НОВОГОДНЯЯ ФОТОСЪЁМКА')
     poster_fotoset6 = models.ImageField('Обложка Новогодней фотосъёмки', upload_to='fotoset_img/')
     description6 = models.TextField('Короткое описание (для главной)', default='')
+    updated = models.DateTimeField(auto_now=True)
 
 
 

@@ -44,7 +44,6 @@ i.fa-times {
 }
 
 .nav-menu {
-    position: fixed;
     /*left: calc(50% - 548px);*/
     display: block;
     margin: 0 auto;
@@ -165,6 +164,12 @@ i.fa-times {
     padding-bottom: 50px;
 }
 
+div.fotorama {
+    display: block;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
 /*********************************************************************   Section album-list   ********************************************/
 .album-list {
     padding-bottom: 50px;
@@ -239,6 +244,8 @@ i.fa-times {
 .ars-panel-ul li a {
     color: #ffffff;
     display: block;
+     display: flex;
+    flex-direction: column;
 
 }
 
@@ -252,6 +259,19 @@ i.fa-times {
     background: rgba(0, 0, 0, 0.5);
     transition: all 0.3s linear;
 }
+
+span.was-published-recently{
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+     border-radius: 3px;
+    padding: 1.5px;
+    width: 200px;
+    color: #ffffff;
+    background: rgba(255, 0, 0, 0.93);
+    margin-bottom: 10px;
+}
+
 
 /****************************************************   A-href    ***************************************************/
 .a-href {
@@ -365,7 +385,23 @@ hr {
     background-image: -ms-linear-gradient(left, #fff, #000, #fff);
     background-image: -o-linear-gradient(left, #fff, #000, #fff);
 }
+::-webkit-scrollbar
+{
+    background: rgba(0,0,0,0.2);
+    width: 10px;
 
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgba(0,0,0,0.6);
+
+}
 /* media*/
 
 @media all and (max-width: 1300px) {
@@ -612,6 +648,10 @@ hr {
     .ars-album-list1 h2 {
         font-size: 20px;
         line-height: 44px;
+    }
+
+    div.fotorama {
+        max-width: 95%;
     }
 
     /****************************************************   A-href    ***************************************************/

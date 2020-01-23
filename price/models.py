@@ -10,6 +10,7 @@ class Price(models.Model):
     name = models.CharField('Вид фотосъёмки', max_length=200)
     poster_price = models.ImageField('Изображение фотосъёмки', upload_to='price_img/')
     url = models.SlugField('URL-привязка', max_length=50, unique=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name

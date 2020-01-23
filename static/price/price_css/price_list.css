@@ -14,7 +14,23 @@ body {
     height: 100%;
 
 }
+::-webkit-scrollbar
+{
+    background: rgba(0,0,0,0.2);
+    width: 10px;
 
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgba(0,0,0,0.6);
+
+}
 main {
     flex-grow: 1;
 }
@@ -170,7 +186,7 @@ section.price h1{
     position: relative;
     /*margin-top: 50px;*/
     width: 500px;
-    height: 300px;
+    height: 333px;
 }
 
 .overlay {
@@ -191,7 +207,7 @@ section.price h1{
 .main-price img {
     position: absolute;
     width: 500px;
-    height: 300px;
+    height: 333px;
     left: 0;
 }
 
@@ -404,7 +420,7 @@ hr {
         position: relative;
         /*margin-top: 50px;*/
         width: 400px;
-        height: 240px;
+        height: 266px;
     }
 
     .overlay {
@@ -425,7 +441,7 @@ hr {
     .main-price img {
         position: absolute;
         width: 400px;
-        height: 240px;
+        height: 266px;
         left: 0;
     }
 
@@ -509,7 +525,7 @@ hr {
 
     .main-price {
         width: 350px;
-        height: 210px;
+        height: 233px;
     }
 
     .overlay {
@@ -530,7 +546,7 @@ hr {
     .main-price img {
         position: absolute;
         width: 350px;
-        height: 210px;
+        height: 233px;
         left: 0;
     }
 
@@ -773,7 +789,7 @@ hr {
         position: relative;
         /*margin-top: 50px;*/
         width: 500px;
-        height: 300px;
+        height: 333px;
     }
 
     .overlay {
@@ -791,7 +807,7 @@ hr {
     .main-price img {
         position: absolute;
         width: 500px;
-        height: 300px;
+        height: 333px;
         left: 0;
     }
 
@@ -870,7 +886,7 @@ hr {
         position: relative;
         /*margin-top: 50px;*/
         width: 300px;
-        height: 180px;
+        height: 200px;
     }
 
     .overlay {
@@ -888,7 +904,7 @@ hr {
     .main-price img {
         position: absolute;
         width: 300px;
-        height: 180px;
+        height: 200px;
         left: 0;
     }
 
@@ -990,7 +1006,7 @@ hr {
         position: relative;
         /*margin-top: 50px;*/
         width: 240px;
-        height: 144px;
+        height: 160px;
     }
 
     .overlay {
@@ -1008,7 +1024,7 @@ hr {
     .main-price img {
         position: absolute;
         width: 240px;
-        height: 144px;
+        height: 160px;
         left: 0;
     }
 

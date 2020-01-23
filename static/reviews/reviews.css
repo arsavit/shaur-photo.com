@@ -14,7 +14,23 @@ body {
     height: 100%;
 
 }
+::-webkit-scrollbar
+{
+    background: rgba(0,0,0,0.2);
+    width: 10px;
 
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgba(0,0,0,0.6);
+
+}
 main {
     flex-grow: 1;
 }

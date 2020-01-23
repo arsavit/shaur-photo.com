@@ -1,0 +1,3 @@
+User-agent: Yandex
+Disallow: /3773ex6/
+Sitemap: https://shaur-photo.com/sitemap.xml

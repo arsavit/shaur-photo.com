@@ -7,6 +7,7 @@ class Autor(models.Model):
     avatar = models.ImageField('Аватар автора отзыва', upload_to='reviews_autor')
     social_url = models.CharField('Ссылка на страничку в соц. сетях автора', max_length=250)
     proof_url = models.CharField('Ссылка на сам отзыв в группе', max_length=250)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name

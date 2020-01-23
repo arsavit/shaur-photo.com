@@ -30,6 +30,9 @@
                         <a href="{{ album.get_absolute_url }}">
 
                             <div class="card">
+                               {% if album.was_published_recently %}
+                                        <span class="was-published-recently-list">Новый альбом!</span>
+                                    {% endif %}
                                 <div class="imgBx">
                                     <img src="{{album.album_poster.url}}" alt="{{ album.title }}">
                                 </div>
@@ -42,6 +45,7 @@
 
 
                     </div>
+                {% include 'include/pagination.html' with page=page_obj %}
                 </div>
 
             </div>

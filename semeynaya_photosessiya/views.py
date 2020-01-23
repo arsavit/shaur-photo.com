@@ -15,6 +15,7 @@ class Album_semListView(ListView):
     model = Album_sem
     queryset = Album_sem.objects.all()
     template_name = 'semeynaya_photosessiya/album_list.html'
+    paginate_by = 9
 
 
 class Album_semDetailView(DetailView):

@@ -8,7 +8,8 @@ class About(models.Model):
 
     title = models.CharField('Заголовок', max_length=200)
     avatar = models.ImageField('Изображение', upload_to='about_img/')
-    second_title = models.CharField('Заголовок подраздела', max_length=150)
+#    second_title = models.CharField('Заголовок подраздела', max_length=150)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -31,13 +32,3 @@ class Desc(models.Model):
         verbose_name_plural = 'Абзацы основного раздела'
 
 
-class Desc_second(models.Model):
-    second_description = models.TextField('Абзац дополнительного раздела')
-    about_sec = models.ForeignKey(About, verbose_name='к заголовку', on_delete=models.CASCADE, default='')
-
-    def __str__(self):
-        return self.second_description
-
-    class Meta:
-        verbose_name = 'Абзац дополнительного раздела'
-        verbose_name_plural = 'Абзацы дополнительного раздела'

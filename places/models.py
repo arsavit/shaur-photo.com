@@ -10,6 +10,7 @@ class Sity(models.Model):
     name = models.CharField('Город', max_length=70)
     poster_place = models.ImageField('Изображение', upload_to='city_img/')
     url = models.SlugField(max_length=50, unique=True)
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name

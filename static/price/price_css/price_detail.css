@@ -14,7 +14,23 @@ body {
     height: 100%;
 
 }
+::-webkit-scrollbar
+{
+    background: rgba(0,0,0,0.2);
+    width: 10px;
 
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgba(0,0,0,0.6);
+
+}
 main {
     flex-grow: 1;
 }
@@ -206,9 +222,51 @@ div.imaga1 {
     padding-left: 10px;
 }
 
-.imaga-and-other img {
+.imaga{
+    width: 600px;
+    height: 400px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.imaga:hover>a{
     display: block;
-    max-width: 600px;
+}
+.imaga:hover>img{
+    transform: scale(1.2);
+}
+.imaga img{
+    width: 100%;
+    height: 100%;
+    transition: 0.4s;
+}
+.imaga a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.5);
+    display: none;
+    z-index: 1;
+}
+.imaga a:after{
+    content: 'Заказать фотосъёмку';
+    text-transform: uppercase;
+    /*letter-spacing: 0.01em;*/
+    font-size: 16px;
+    font-weight: 300;
+    color: #ffffff;
+    border: 1.5px solid;
+    /*background: #5F82A6;*/
+    /*border-radius: 4px;*/
+    padding: 12px 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .other-ars {
@@ -414,9 +472,9 @@ hr {
         padding-left: 10px;
     }
 
-    .imaga-and-other img {
-        display: block;
-        max-width: 480px;
+    .imaga {
+        width: 480px;
+        height: 320px;
     }
 
 
@@ -465,9 +523,9 @@ hr {
         margin-right: 0;
     }
 
-    .imaga-and-other img {
-        display: block;
-        max-width: 370px;
+    .imaga {
+        width: 370px;
+        height: 246px;
     }
 
 }

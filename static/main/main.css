@@ -150,6 +150,7 @@ i.fa-times {
 
 .flip-card-front img {
     width: 300px;
+    height: 200px;
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -327,7 +328,7 @@ div.ars-card{
 .ars-album-list1 {
     font-size: 15px;
     line-height: 1.4;
-    /*width: 281px;*/
+    max-width: 302px;
     /*position: absolute;*/
     /*right: 15px;*/
     /*top: 400px;*/
@@ -416,6 +417,17 @@ div.ars-card{
     transition: all 0.3s linear;
 }
 
+span.was-published-recently{
+    border-radius: 3px;
+    padding: 1.5px;
+    display: block;
+    color: #ffffff;
+    background: red;
+    float: right;
+    font-size: 14px;
+
+}
+
 /****************************************************   FOOTER    ***************************************************/
 footer {
     background: rgba(0, 0, 0, 1);
@@ -477,7 +489,23 @@ hr {
     background-image: -ms-linear-gradient(left, #fff, #000, #fff);
     background-image: -o-linear-gradient(left, #fff, #000, #fff);
 }
+::-webkit-scrollbar
+{
+    background: rgba(0,0,0,0.2);
+    width: 10px;
 
+}
+::-webkit-scrollbar-thumb
+{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+
+}
+::-webkit-scrollbar-thumb:hover
+{
+    background: rgba(0,0,0,0.6);
+
+}
 /* media*/
 
 @media all and (max-width: 1300px) {
@@ -584,6 +612,7 @@ hr {
     }
 
     .ars-album-list1{
+        max-width: 100%;
         width: 100%;
     }
 
@@ -767,6 +796,9 @@ hr {
     #album-click:hover {
         /*background: rgba(0, 0, 0, 0.8);*/
         transition: all 0.3s linear;
+    }
+    section.fotorama_ars div.fotorama{
+        padding-top: 69px;
     }
 
     /******************************************************** Section random slider*************************************************/

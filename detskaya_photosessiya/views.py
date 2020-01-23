@@ -14,6 +14,7 @@ class Album_detListView(ListView):
     model = Album_det
     queryset = Album_det.objects.all()
     template_name = 'detskaya_photosessiya/album_list.html'
+    paginate_by = 9
 
 
 class Album_detDetailView(DetailView):

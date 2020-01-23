@@ -5,6 +5,7 @@ from django.db import models
 class Headers(models.Model):
     head1 = models.CharField('Заголовок для видов фотосессий', max_length=150, default='Популярные виды фотосессий')
     head2 = models.CharField('Заголовок для слайдера', max_length=150, default='Такой-то альбом')
+    updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.head1

@@ -24,64 +24,32 @@
                 <div class="container">
                     <h1> {{ about.title }}</h1>
                     <div class="about-me">
-                        <div class="description-about">
-                            <div class="mini-foto1">
-                                <img src="{{ about.avatar.url }}" alt="Светлана">
+                      <div class="description-about">
+                            <div class="desc-and-social">
+                                <div class="mini-foto1">
+                                    <img src="{{ about.avatar.url }}" alt="Фотограф Светлана Гавриловец">
+                                </div>
+                                {% for desc in about.desc_set.all %}
+                                    <p>{{ desc.main_description }}</p>
+                                {% endfor %}
+                                <ul class="social">
+
+                                    <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a>
+                                    </li>
+                                    <li><a target="_blank" href="https://vk.com/club134565385"><i
+                                            class="fab fa-vk"></i></a></li>
+                                    <li><a target="_blank"
+                                           href="https://www.instagram.com/sviatlana_haurylavets/"><i
+                                            class="fab fa-instagram"></i></a></li>
+
+                                </ul>
                             </div>
-                            {% for desc in about.desc_set.all %}
-                                <p>{{ desc.main_description }}</p>
-                            {% endfor %}
-
-                        </div>
-                        <div class="foto-and-equipment">
-                            <div class="foto">
-                                <div class="mini-foto">
-                                    <img src="{{ about.avatar.url }}" alt="Светлана">
-                                </div>
-
-                                <div class="entry-thumb">
-                                    <div class="part part-1"
-                                         style="background-image: url({{ about.avatar.url }}); background-repeat: no-repeat"></div>
-                                    <div class="part part-2"
-                                         style="background-image: url({{ about.avatar.url }}); background-repeat: no-repeat"></div>
-                                    <div class="part part-3"
-                                         style="background-image: url({{ about.avatar.url }}); background-repeat: no-repeat"></div>
-                                    <div class="part part-4"
-                                         style="background-image: url({{ about.avatar.url }}); background-repeat: no-repeat"></div>
-                                    <ul class="share_bar">
-
-                                        <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://vk.com/club134565385"><i
-                                                class="fab fa-vk"></i></a></li>
-                                        <li><a target="_blank"
-                                               href="https://www.instagram.com/sviatlana_haurylavets/"><i
-                                                class="fab fa-instagram"></i></a></li>
-
-                                    </ul>
-                                </div>
-                                <div class="entry-content">
-                                    <h2>{{ about.second_title }}</h2>
-                                    {% for desc_second in about.desc_second_set.all %}
-                                        <p>{{ desc_second.second_description }}</p>
-                                    {% endfor %}
-                                    <ul class="social">
-
-                                        <li><a target="_blank" href="https://vk.com/mischkova"><i class="fab fa-vk"></i></a>
-                                        </li>
-                                        <li><a target="_blank" href="https://vk.com/club134565385"><i
-                                                class="fab fa-vk"></i></a></li>
-                                        <li><a target="_blank"
-                                               href="https://www.instagram.com/sviatlana_haurylavets/"><i
-                                                class="fab fa-instagram"></i></a></li>
-
-                                    </ul>
-                                </div>
+                            <div class="foto-right">
+                                <img class="foto-right-main" src="{{ about.avatar.url }}"
+                                     alt="Фотограф Светлана Гавриловец">
                             </div>
-
-
                         </div>
-                    </div>
+
                 </div>
                 </div>
             </section>
