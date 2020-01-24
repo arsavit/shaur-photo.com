@@ -42,7 +42,7 @@
                                 <div class="tarif">
                                     {% for tarif in price.tariffs_set.all %}
                                         <h5>{{ tarif.title }}</h5>
-                                        <p class="description-tarif">{{ tarif.tariffs_description }}</p>
+                                        <p class="description-tarif">{{ tarif.tariffs_description|safe }}</p>
                                         <div class="price-sum">
                                             {{ tarif.tariffs_price }}
                                         </div>

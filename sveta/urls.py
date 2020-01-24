@@ -60,6 +60,7 @@ sitemaps = {'queryset': Album_birtSitemap,
 
 urlpatterns = [
     path('3773ex6/', admin.site.urls),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path('places/', include('places.urls')),
     path('aboutMe/', include('aboutMe.urls')),
     path('price/', include('price.urls')),
@@ -74,8 +75,7 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     path('', include('main.urls')),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-#    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
-#if settings.DEBUG:
- #   urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
