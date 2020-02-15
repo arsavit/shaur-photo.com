@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # self.SECRET_KEY = os.getenv('SECRET_KEY')
 
-SECRET_KEY = 'ae@@j!lpj2+9wy$#4^#%4zx54@c1%f=54^1r_b)*y)%t5s2@@i'
+SECRET_KEY = '^_$sypd3lcotjci0=z*lz1%_#6%2tj1f^pfxw0r&pt9e0pn@mn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
