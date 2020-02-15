@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/25fa9de4fb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'albums/albums_css/foto_detail.css' %}">
+
     <script src="{% static 'places/places_js/jquery-3.4.1.min.js' %}"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
@@ -27,14 +28,9 @@
                 <div class="main-album-name">
                     <h1>{{ album_birt.title }}</h1>
                 </div>
-                <div class="fotorama"
-                       data-width="900"
-                     data-height="600"
-                     data-ratio="300/200"
-                     data-allowfullscreen="native"
-                     data-nav="thumbs">
+                <div class="foto-deatail">
                     {% for foto in album_birt.foto_birt_set.all %}
-                        <img src="{{ foto.image.url }}" alt="{{ album_birt.title }}">
+                        <img class="some-foto {{ foto.width }}" src="{{ foto.image.url }}" alt="{{ album_birt.title }}">
                     {% endfor %}
                 </div>
             </div>
@@ -202,6 +198,7 @@
         </section>
 
     </main>
+<script src="{% static 'albums/albums_js/index_album_deatail.js' %}"></script>
 
 {% endblock content %}
 

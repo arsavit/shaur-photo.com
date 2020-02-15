@@ -36,6 +36,7 @@ class Album_birt(models.Model):
 class Foto_birt(models.Model):
     image = models.ImageField('Фотография', upload_to='birthday_photosessiya/albums')
     album = models.ForeignKey(Album_birt, verbose_name='Альбом', on_delete=models.CASCADE, default='')
+    width = models.CharField('Ширина 100%', max_length=100, default='нет')
 
     def __str__(self):
         return self.album.title

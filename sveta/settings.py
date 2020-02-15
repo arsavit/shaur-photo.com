@@ -22,11 +22,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # self.SECRET_KEY = os.getenv('SECRET_KEY')
 
-SECRET_KEY = ''
+SECRET_KEY = '^_$sypd3lcotjci0=z*lz1%_#6%2tj1f^pfxw0r&pt9e0pn@mn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'shaur-photo.com', 'localhost']
 
@@ -105,7 +105,12 @@ DATABASES = {
         'PORT': '',
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -141,7 +146,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 # STATIC_URL = '/static/'
-#STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 
 MEDIA_URL = '/media/'
@@ -158,13 +163,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-# The URL to use when referring to static files (where they will be served from)
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# # The URL to use when referring to static files (where they will be served from)
 STATIC_URL = '/static/'
-#STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 #STATIC_ROOT = '/home/arsavit/shaur-photo-dep/shaur-photo/static/'
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATICFILES_DIRS = [STATIC_DIR]
 
 
 

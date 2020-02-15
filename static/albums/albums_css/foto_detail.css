@@ -13,6 +13,7 @@ body {
     flex-direction: column;
     height: 100%;
 
+
 }
 
 main {
@@ -164,10 +165,55 @@ i.fa-times {
     padding-bottom: 50px;
 }
 
-div.fotorama {
-    display: block;
-    max-width: 900px;
+.foto-deatail{
     margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.some-foto{
+    margin: 6px auto;
+    max-width: 49%;
+    max-height: 100%;
+    /*border: 4px solid #ffffff;*/
+    transition: 0.3s linear;
+}
+.some-foto:hover{
+    box-shadow: 2px 5px 2px #2d2d2d;
+    transition: 0.3s linear;
+}
+.width100{
+
+    max-width: 99%;
+
+}
+.popup {
+	position: fixed;
+	height:100%;
+	width:100%;
+	top:0;
+	left:0;
+	display:none;
+	text-align:center;
+    z-index: 101;
+}
+
+.popup_bg {
+	background:rgba(0,0,0,0.4);
+	position:absolute;
+	z-index:1;
+	height:100%;
+	width:100%;
+}
+
+
+.popup_img {
+	position: relative;
+	margin:0 auto;
+	z-index:2;
+	max-height:94%;
+	max-width:94%;
+	margin:1% 0 0 0;
 }
 
 /*********************************************************************   Section album-list   ********************************************/
@@ -321,6 +367,7 @@ hr.hr-a-href {
     box-shadow: 1px 1px 4px #000000;
     transition: all 0.3s ease;
 }
+
 
 /****************************************************   FOOTER    ***************************************************/
 footer {
@@ -642,6 +689,10 @@ hr {
     /******************************************************** Section mail-album*************************************************/
     .main-album-name h2 {
         font-size: 18px;
+    }
+    .some-foto{
+    max-width: 90%;
+
     }
 
     /**********************************************************  Section album-list  *******************************************/
