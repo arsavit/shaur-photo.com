@@ -30,14 +30,9 @@
                 <div class="main-album-name">
                     <h1>{{ album_nov.title }}</h1>
                 </div>
-                <div class="fotorama"
-                     data-width="900"
-                     data-height="600"
-                     data-ratio="300/200"
-                     data-allowfullscreen="native"
-                     data-nav="thumbs">
+                <div class="foto-deatail">
                     {% for foto_nov in album_nov.foto_nov_set.all %}
-                        <img src="{{ foto_nov.image.url }}" alt="{{ album_nov.title }}">
+                        <img class="some-foto {{ foto_nov.width }}" src="{{ foto_nov.image.url }}" alt="{{ album_nov.title }}">
                     {% endfor %}
                 </div>
             </div>
@@ -205,7 +200,7 @@
         </section>
 
     </main>
-
+<script src="{% static 'albums/albums_js/index_album_deatail.js' %}"></script>
 {% endblock content %}
 
 

@@ -26,7 +26,7 @@ SECRET_KEY = '^_$sypd3lcotjci0=z*lz1%_#6%2tj1f^pfxw0r&pt9e0pn@mn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'shaur-photo.com', 'localhost']
 

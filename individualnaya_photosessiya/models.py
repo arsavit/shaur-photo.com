@@ -33,6 +33,7 @@ class Album_ind(models.Model):
 class Foto_ind(models.Model):
     image = models.ImageField('Фотография', upload_to='individualnaya_fotosessiya/albums')
     album = models.ForeignKey(Album_ind, verbose_name='Альбом', on_delete=models.CASCADE, default='')
+    width = models.CharField('Ширина', max_length=100,  blank=True)
 
     def __str__(self):
         return self.album.title
