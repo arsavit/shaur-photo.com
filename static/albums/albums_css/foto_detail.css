@@ -701,7 +701,8 @@ hr {
         font-size: 18px;
     }
     .some-foto{
-    max-width: 90%;
+        max-width: 90%;
+        margin: 1px auto;
 
     }
 
