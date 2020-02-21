@@ -20,6 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
+
 # Application definition
 
 SITE_ID = 1
@@ -85,7 +86,6 @@ WSGI_APPLICATION = 'sveta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -136,15 +136,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
-# The absolute path to the directory where collectstatic will collect static files for deployment.
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-# # The URL to use when referring to static files (where they will be served from)
-# STATIC_URL = '/static/'
-# STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-#STATIC_ROOT = '/home/arsavit/shaur-photo-dep/shaur-photo/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 
 
