@@ -12,8 +12,16 @@ from .models import *
 class Foto_birtInline(admin.StackedInline):
     model = Foto_birt
     max_num = 500
-    extra = 20
+    extra = 5
     readonly_fields = ('get_image',)
+    fieldsets = (
+        (None,
+         {'fields': (('image', 'width', 'get_image'),)}),
+        (None,
+         {'fields': (('image_full'),)}),
+
+    )
+
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.image.url} width="60" height="50"')
 
@@ -26,6 +34,7 @@ class Album_birtAdmin(admin.ModelAdmin):
     prepopulated_fields = {'url': ('title',)}
     list_display = ("title", "get_image",)
     readonly_fields = ('get_image',)
+    save_on_top = True
 
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.album_poster.url} width="60" height="50"')

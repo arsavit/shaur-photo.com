@@ -12,6 +12,7 @@ class PlacesInline(admin.StackedInline):
 
 class SityAdmin(admin.ModelAdmin):
     inlines = [PlacesInline, ]
+    save_on_top = True
 
 admin.site.register(Sity, SityAdmin)
 # admin.site.register(Places)

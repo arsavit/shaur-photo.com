@@ -30,7 +30,8 @@
                 </div>
                 <div class="foto-deatail">
                     {% for foto in album_love.foto_love_set.all %}
-                        <img class="some-foto {{ foto.width }}" src="{{ foto.image.url }}" alt="{{ album_love.title }}">
+                        <img class="some-foto {% if foto.width %}{{ foto.width }}{% endif %}" {% if foto.image_full %} fullfoto="{{ foto.image_full.url }}" {% endif %}
+                             src="{{ foto.image.url }}" alt="{{ album_love.title }}">
                     {% endfor %}
                 </div>
             </div>

@@ -18,6 +18,7 @@ class Slider_downInline(admin.StackedInline):
 
 class HeadersAdmin(admin.ModelAdmin):
     inlines = [Slider_headInline, Slider_downInline ]
+    save_on_top = True
 
 # admin.site.register(Slider_head)
 # admin.site.register(Slider_down)

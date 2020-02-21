@@ -31,9 +31,12 @@ class Album_love(models.Model):
         ordering = ('-publish',)
 
 class Foto_love(models.Model):
-    image = models.ImageField('Фотография', upload_to='love_story_photosessiya/albums')
+    image = models.ImageField('Сжатая фотография', db_index=False,
+                              upload_to='love_story_fotosessiya/albums')
+    image_full = models.ImageField('Фото с хорошим качеством', blank=True, db_index=False,
+                                   upload_to='love_story_fotosessiya/albums/low')
     album = models.ForeignKey(Album_love, verbose_name='Альбом', on_delete=models.CASCADE, default='')
-    width = models.CharField('Ширина', max_length=100,  blank=True)
+    width = models.CharField('Ширина', db_index=False, max_length=100,  blank=True)
 
     def __str__(self):
         return self.album.title

@@ -27,6 +27,7 @@ class TariffsInline(admin.StackedInline):
 
 class PriceAdmin(admin.ModelAdmin):
     inlines = [Price_DescriptionInline, TariffsInline, ]
+    save_on_top = True
 
 admin.site.register(Price, PriceAdmin)
 # admin.site.register(Price_Description)

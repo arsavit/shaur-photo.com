@@ -20,16 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-# self.SECRET_KEY = os.getenv('SECRET_KEY')
-
-SECRET_KEY = '^_$sypd3lcotjci0=z*lz1%_#6%2tj1f^pfxw0r&pt9e0pn@mn'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-#DEBUG = True
-DEBUG = False
-
-ALLOWED_HOSTS = ['213.226.127.81', '127.0.0.1', 'shaur-photo.com', 'localhost']
-
 # Application definition
 
 SITE_ID = 1
@@ -95,22 +85,7 @@ WSGI_APPLICATION = 'sveta.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'shaur',
-        'USER': 'shauruser',
-        'PASSWORD': 'shaurphoto',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-# }
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -134,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Minsk'
 
 USE_I18N = True
 
@@ -165,14 +140,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 # # The URL to use when referring to static files (where they will be served from)
-STATIC_URL = '/static/'
-# STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
-#STATIC_ROOT = '/home/arsavit/shaur-photo-dep/shaur-photo/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATIC_URL = '/static/'
 # STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [STATIC_DIR]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_ROOT = '/home/arsavit/shaur-photo-dep/shaur-photo/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 
 
 
@@ -245,3 +218,8 @@ CKEDITOR_CONFIGS = {
         ]),
     }
 }
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass

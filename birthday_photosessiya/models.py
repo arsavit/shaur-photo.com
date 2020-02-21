@@ -9,7 +9,6 @@ import datetime
 # Create your models here.
 
 
-
 class Album_birt(models.Model):
     title = models.CharField('Название альбома', max_length=100)
     album_poster = models.ImageField('Обложка альбома', upload_to='birthday_fotosessiya/')
@@ -18,7 +17,6 @@ class Album_birt(models.Model):
     updated = models.DateTimeField(auto_now=True)
     publish = models.DateTimeField(default=timezone.now)
 
-
     def __str__(self):
         return self.title
 
@@ -26,21 +24,25 @@ class Album_birt(models.Model):
         return reverse('album_birt_detail', kwargs={"slug": self.url})
 
     def was_published_recently(self):
-        return self.publish >= (timezone.now()-datetime.timedelta(days=7))
+        return self.publish >= (timezone.now() - datetime.timedelta(days=7))
 
     class Meta:
         verbose_name = 'Альбом'
         verbose_name_plural = 'Альбомы'
         ordering = ('-publish',)
 
+
 class Foto_birt(models.Model):
-    image = models.ImageField('Фотография', upload_to='birthday_photosessiya/albums')
+    image = models.ImageField('Сжатая фотография', db_index=False,
+                              upload_to='birthday_fotosessiya/albums')
+    image_full = models.ImageField('Фото с хорошим качеством', blank=True, db_index=False,
+                                   upload_to='birthday_fotosessiya/albums/low')
     album = models.ForeignKey(Album_birt, verbose_name='Альбом', on_delete=models.CASCADE, default='')
-    width = models.CharField('Ширина', max_length=100,  blank=True)
+    width = models.CharField('Ширина', db_index=False, max_length=15, blank=True)
 
     def __str__(self):
         return self.album.title
 
     class Meta:
-        verbose_name= 'Фотография'
-        verbose_name_plural= 'Фотографии'
+        verbose_name = 'Фотография'
+        verbose_name_plural = 'Фотографии'

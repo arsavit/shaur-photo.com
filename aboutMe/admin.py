@@ -14,6 +14,7 @@ class AboutAdmin(admin.ModelAdmin):
     inlines = [DescInline, ]
     # list_display = ('get_image',)
     readonly_fields = ('get_image',)
+    save_on_top = True
     def get_image(self, obj):
         return mark_safe(f'<img src={obj.avatar.url} width="60" height="50"')
 

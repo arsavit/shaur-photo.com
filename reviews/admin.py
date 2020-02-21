@@ -12,6 +12,7 @@ class BodyInline(admin.StackedInline):
 
 class AutorAdmin(admin.ModelAdmin):
     inlines = [BodyInline, ]
+    save_on_top = True
 
 
 admin.site.register(Autor, AutorAdmin)

@@ -10,7 +10,7 @@ from django.urls import reverse
 
 class Album_sem(models.Model):
     title = models.CharField('Название альбома', max_length=100)
-    album_poster = models.ImageField('Обложка альбома', upload_to='svadebnaya_fotosessiya/')
+    album_poster = models.ImageField('Обложка альбома', upload_to='semeynaya_fotosessiya/')
     # date_album = models.DateField('Дата', default=date.today)
     url = models.SlugField('URL-привязка', max_length=50, unique=True)
     updated = models.DateTimeField(auto_now=True)
@@ -31,9 +31,12 @@ class Album_sem(models.Model):
         ordering = ('-publish',)
 
 class Foto_sem(models.Model):
-    image = models.ImageField('Фотография', upload_to='semeynaya_photosessiya/albums')
+    image = models.ImageField('Сжатая фотография', db_index=False,
+                              upload_to='semeynaya_fotosessiya/albums')
+    image_full = models.ImageField('Фото с хорошим качеством', blank=True, db_index=False,
+                                   upload_to='semeynaya_fotosessiya/albums/low')
     album = models.ForeignKey(Album_sem, verbose_name='Альбом', on_delete=models.CASCADE, default='')
-    width = models.CharField('Ширина', max_length=100,  blank=True)
+    width = models.CharField('Ширина', db_index=False, max_length=100,  blank=True)
 
     def __str__(self):
         return self.album.title

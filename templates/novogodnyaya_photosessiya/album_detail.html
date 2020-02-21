@@ -32,7 +32,8 @@
                 </div>
                 <div class="foto-deatail">
                     {% for foto_nov in album_nov.foto_nov_set.all %}
-                        <img class="some-foto {{ foto_nov.width }}" src="{{ foto_nov.image.url }}" alt="{{ album_nov.title }}">
+                        <img class="some-foto {% if foto_nov.width %}{{ foto_nov.width }}{% endif %}" {% if foto_nov.image_full %} fullfoto="{{ foto_nov.image_full.url }}" {% endif %}
+                             src="{{ foto_nov.image.url }}" alt="{{ album_nov.title }}">
                     {% endfor %}
                 </div>
             </div>
