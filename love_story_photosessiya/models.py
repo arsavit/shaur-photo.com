@@ -39,8 +39,9 @@ class Foto_love(models.Model):
     width = models.CharField('Ширина', db_index=False, max_length=100,  blank=True)
 
     def __str__(self):
-        return self.album.title
+        return f'{self.pk}'
 
     class Meta:
         verbose_name= 'Фотография'
         verbose_name_plural= 'Фотографии'
+        ordering = ('pk',)
